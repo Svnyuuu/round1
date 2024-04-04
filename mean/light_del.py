@@ -15,8 +15,6 @@ dataset = pd.read_csv('./processed/randel.csv')
 dataset.head()
 
 corr_var = dataset.corr()
-corr_var
-
 plt.figure(figsize=(10, 7.5))
 sns.heatmap(corr_var, annot=True, cmap='BuPu')
 
