@@ -41,7 +41,7 @@ for i in range(5):
     roc_auc = roc_auc_score(y_test, y_pred)
 
     # 计算 ROC 曲线
-    y_score = clf.predict_proba(X_test)[:, 1]
+    y_score = clf.predict_proba(X_test)[:, 1] #两列只取最后一列？
     fpr, tpr, _ = roc_curve(y_test, y_score)
     roc_auc = auc(fpr, tpr)
 
