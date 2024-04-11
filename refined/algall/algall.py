@@ -10,6 +10,8 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix, accuracy_score, roc_auc_score
 import sklearn.metrics as metrics
 from sklearn.metrics import roc_curve, auc
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import GradientBoostingClassifier
 
 dataset = pd.read_csv('./refined/onedonesample.csv')
 
@@ -67,10 +69,36 @@ y_score_lgbm = lgbm_classifier.predict_proba(X_test)[:, 1]
 fpr_lgbm, tpr_lgbm, _ = roc_curve(y_test, y_score_lgbm)
 roc_auc_lgbm = auc(fpr_lgbm, tpr_lgbm)
 
+# 逻辑回归
+lr_classifier = LogisticRegression(random_state=42)
+# 训练模型
+lr_classifier.fit(X_train, y_train)
+# 在测试集上进行预测
+y_pred_lr = lr_classifier.predict(X_test)
+
+# GBDT
+gbdt_classifier = GradientBoostingClassifier(random_state=42)
+# 训练模型
+gbdt_classifier.fit(X_train, y_train)
+# 在测试集上进行预测
+y_pred_gbdt = gbdt_classifier.predict(X_test)
+
+# 计算LR的ROC曲线
+y_score_lr = lr_classifier.predict_proba(X_test)[:, 1]
+fpr_lr, tpr_lr, _ = roc_curve(y_test, y_score_lr)
+roc_auc_lr = auc(fpr_lr, tpr_lr)
+
+# 计算GBDT的ROC曲线
+y_score_gbdt = gbdt_classifier.predict_proba(X_test)[:, 1]
+fpr_gbdt, tpr_gbdt, _ = roc_curve(y_test, y_score_gbdt)
+roc_auc_gbdt = auc(fpr_gbdt, tpr_gbdt)
+
 plt.figure()
 lw = 2
 plt.plot(fpr_rf, tpr_rf, color='darkorange', lw=lw, label='RF ROC curve (area = %0.2f)' % roc_auc_rf)
 plt.plot(fpr_lgbm, tpr_lgbm, color='green', lw=lw, label='LGBM ROC curve (area = %0.2f)' % roc_auc_lgbm)
+plt.plot(fpr_lr, tpr_lr, color='blue', lw=lw, label='LR ROC curve (area = %0.2f)' % roc_auc_lr)
+plt.plot(fpr_gbdt, tpr_gbdt, color='red', lw=lw, label='GBDT ROC curve (area = %0.2f)' % roc_auc_gbdt)
 plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 plt.xlim([0.0, 1.0])
 plt.ylim([0.0, 1.05])
@@ -79,4 +107,3 @@ plt.ylabel('TPR')
 plt.title('ROC')
 plt.legend(loc="lower right")
 plt.savefig('./refined/algall/roc.png')
-
