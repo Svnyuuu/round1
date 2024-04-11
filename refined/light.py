@@ -10,7 +10,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score, roc_auc_score
 import sklearn.metrics as metrics
 from sklearn.metrics import roc_curve, auc
 
-dataset = pd.read_csv('./refined/onedone.csv')
+dataset = pd.read_csv('./refined/onedonesample.csv')
 
 dataset.head()
 
