@@ -1,5 +1,8 @@
 # README
 
+datalh
+lh数据
+
 data
 数据
 
@@ -18,5 +21,6 @@ refined
     fiveinter 五次交叉
 
     essense 特征重要性分析（shap库 ＋画图）
+        pca 主成分分析
 
     algall是所有算法的roc图在同一个图上√

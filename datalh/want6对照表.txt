@@ -1,0 +1,103 @@
+
+want6中包含229例ARDS患者与230例非ards患者（由ICD编码筛选）
+
+数据均为第一天数据
+
+
+
+subject_id: 受试者编号
+hadm_id: 住院号
+stay_id: 住院留观编号
+gender: 性别
+dod: 死亡日期（Date of Death）
+admittime: 入院时间
+dischtime: 出院时间
+los_hospital: 住院时长（Length of Stay in Hospital）
+admission_age: 入院年龄
+race: 种族
+hospital_expire_flag: 住院是否死亡
+hospstay_seq: 住院留观顺序
+first_hosp_stay: 第一次住院留观
+icu_intime: ICU入院时间
+icu_outtime: ICU出院时间
+los_icu: ICU住院时长
+icustay_seq: ICU住院留观顺序
+first_icu_stay: 第一次ICU住院留观
+first_careunit: 第一个护理单位
+last_careunit: 最后一个护理单位
+sumlos_icu: 总ICU住院时长
+minicu_intime: 最早的ICU入院时间
+maxicu_outtime: 最晚的ICU出院时间
+minadmittime: 最早的入院时间
+maxdischtime: 最晚的出院时间
+ards: 急性呼吸窘迫综合征（Acute Respiratory Distress Syndrome）
+hematocrit_mean: 红细胞比积平均值
+hemoglobin_mean: 血红蛋白平均值
+platelets_mean: 血小板平均值
+wbc_mean: 白细胞计数平均值
+albumin_mean: 白蛋白平均值
+globulin_mean: 球蛋白平均值
+total_protein_mean: 总蛋白平均值
+aniongap_mean: 阴离子间隙平均值
+bicarbonate_mean: 碳酸氢根平均值
+bun_mean: 尿素氮平均值
+calcium_mean: 钙平均值
+chloride_mean: 氯平均值
+creatinine_mean: 肌酐平均值
+glucose_mean: 葡萄糖平均值
+sodium_mean: 钠平均值
+potassium_mean: 钾平均值
+abs_basophils_mean: 嗜碱细胞绝对值平均值
+abs_eosinophils_mean: 嗜酸细胞绝对值平均值
+abs_lymphocytes_mean: 淋巴细胞绝对值平均值
+abs_monocytes_mean: 单核细胞绝对值平均值
+abs_neutrophils_mean: 中性粒细胞绝对值平均值
+atyps_mean: 异形细胞平均值
+bands_mean: 带状核细胞平均值
+imm_granulocytes_mean: 免疫颗粒细胞平均值
+metas_mean: 早幼粒细胞平均值
+nrbc_mean: 核红细胞绝对值平均值
+d_dimer_mean: D-二聚体平均值
+fibrinogen_mean: 纤维蛋白原平均值
+thrombin_mean: 凝血酶平均值
+inr_mean: 国际标准化比率平均值
+pt_mean: 凝血酶原时间平均值
+ptt_mean: 部分凝血活酶时间平均值
+alt_mean: 丙氨酸氨基转移酶平均值
+alp_mean: 碱性磷酸酶平均值
+ast_mean: 天门冬氨酸转氨酶平均值
+amylase_mean: 淀粉酶平均值
+bilirubin_total_mean: 总胆红素平均值
+bilirubin_direct_mean: 直接胆红素平均值
+bilirubin_indirect_mean: 间接胆红素平均值
+ck_cpk_mean: 肌酸激酶平均值
+ck_mb_mean: 肌钙蛋白平均值
+ggt_mean: γ-谷氨酰转肽酶平均值
+ld_ldh_mean: 乳酸脱氢酶平均值
+heart_rate_mean: 心率平均值
+sbp_mean: 收缩压平均值
+dbp_mean: 舒张压平均值
+mbp_mean: 平均动脉压平均值
+resp_rate_mean: 呼吸率平均值
+temperature_mean: 体温平均值
+spo2_mean: 血氧饱和度平均值
+
+
+
+
+- gcs_min：最低GCS评分，用于评估患者的意识水平。通常情况下，GCS评分的范围是3到15，分数越低表示意识水平越低。
+- gcs_motor：GCS评分的动作反应部分，用于评估患者的运动功能和反应。
+- gcs_verbal：GCS评分的语言反应部分，用于评估患者的语言功能和反应。
+- gcs_eyes：GCS评分的眼睛反应部分，用于评估患者的眼睛功能和反应。
+- gcs_unable：用于记录患者是否无法评估其GCS评分的情况，可能是由于某种原因无法测量或评估。
+
+
+
+SOFA评分（多器官功能评分）：
+respiration（呼吸系统）
+coagulation（凝血系统）
+liver（肝功能）
+cardiovascular（心血管系统）
+CNS（中枢神经系统）
+renal（肾功能）
+

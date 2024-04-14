@@ -43,7 +43,7 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 # RF
-lgbm_classifier = LGBMClassifier(n_estimators=100, random_state=42)
+lgbm_classifier = LGBMClassifier(n_estimators=100, random_state=42)  # Increase the number of estimators
 # 训练模型
 lgbm_classifier.fit(X_train, y_train)
 # 在测试集上进行预测
